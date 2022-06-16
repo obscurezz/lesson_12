@@ -1,3 +1,10 @@
-## Исходный код для проекта урока 12
+## Project of lesson 12
 
-Склонируйте репозиторий себе, затем выполните задание.
+# main.py
+blueprint for main page and search
+
+# loader.py
+blueprint for posts
+
+# functions.py
+utilities for in-project usage
