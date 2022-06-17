@@ -7,12 +7,12 @@ from jinja2 import TemplateNotFound
 from functions import JsonLoader, create_content_dict, is_filename_allowed
 
 # Log configuration settings
-FORMAT = '%(asctime)s %(clientip)-15s %(message)s'
-logging.basicConfig(format=FORMAT, filename="logs/loader.log", level=logging.DEBUG)
+# FORMAT = '%(asctime)s %(clientip)-15s %(message)s'
+logging.basicConfig(format='%(levelname)s:%(asctime)s:%(message)s', filename="logs/loader.log", level=logging.DEBUG)
 
 post_blueprint = Blueprint('post_blueprint', __name__, template_folder="templates")
 POSTS = JsonLoader('posts.json')
-UPLOAD_FOLDER = f"uploads/images"
+UPLOAD_FOLDER = "/uploads/images"
 
 
 @post_blueprint.route('/post')
@@ -41,8 +41,8 @@ def page_post_upload():
         logging.info("Template was not found")
         abort(404)
     except JSONDecodeError:
-        logging.error(f"Couldn't refactor JSON file")
+        logging.error("Couldn't refactor JSON file")
         return f"Couldn't refactor JSON file"
     except (FileExistsError, FileNotFoundError):
-        logging.error(f"Something is wrong with the file")
+        logging.error("Something is wrong with the file")
         return f"Something is wrong with the file"
