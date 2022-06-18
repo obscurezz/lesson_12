@@ -39,7 +39,7 @@ def is_filename_allowed(filename: str) -> bool:
     """Checks if our file is the picture"""
     allowed_extensions = {'bmp', 'png', 'jpg', 'jpeg', 'gif'}
     # getting extension of file
-    extension = filename.split(".")[-1]
+    extension: str = filename.split(".")[-1]
     if extension in allowed_extensions:
         return True
     return False
