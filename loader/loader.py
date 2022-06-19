@@ -5,7 +5,7 @@ from flask import Blueprint, render_template, request, abort
 from jinja2 import TemplateNotFound
 
 from functions import JsonLoader, create_content_dict, is_filename_allowed
-from settings import UPLOAD_IMAGES_DIR as FOLDER, image_to_path
+from settings import image_to_path
 
 
 post_blueprint = Blueprint('post_blueprint', __name__, template_folder="templates")

@@ -1,13 +1,13 @@
 from pathlib import Path
 
-BASE_DIR: str = Path(__file__).resolve().parent
+BASE_DIR: Path = Path(__file__).resolve().parent
 
-LOGS_FOLDER: str = BASE_DIR.joinpath('logs')
+LOGS_FOLDER: Path = BASE_DIR.joinpath('logs')
 
-UPLOAD_FOLDER: str = BASE_DIR.joinpath('uploads')
+UPLOAD_FOLDER: Path = BASE_DIR.joinpath('uploads')
 
-UPLOAD_IMAGES_DIR: str = UPLOAD_FOLDER.joinpath('images')
+UPLOAD_IMAGES_DIR: Path = UPLOAD_FOLDER.joinpath('images')
 
 
-def image_to_path(filename: str) -> str:
+def image_to_path(filename: str) -> Path:
     return UPLOAD_IMAGES_DIR.joinpath(filename)
